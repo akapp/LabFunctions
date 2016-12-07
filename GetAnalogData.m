@@ -23,6 +23,11 @@ function [time, AnalogWaveforms, AnalogElectrodeIDs] = GetAnalogData(filename, s
 % Adapted from RippleNeuroshareDemo1
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if nargin<5
+    tend='';
+elseif nargin<4
+    tstart='';
+end
 [ns_RESULT, hFile] = ns_OpenFile(filename);
 
 % check to make sure the operation succeeded
